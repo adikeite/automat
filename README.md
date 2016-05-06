@@ -12,3 +12,42 @@ Automatization of manual tests
 * different projects
 * markdown support
 * import of .md files  
+
+# Entities
+## Test template
+- Product name (version)
+- state (only one active template for project)
+- list of test cases (import from markdown)
+- Test suite name
+- Test case name
+
+| Product name | Superadmin |
+|--------------|------------|
+| Test suite  | **New items** |
+| State| **Active** |
+
+List items:
+
+|Test suite|Test case| description|
+|---------|------------| ---- |
+|User managements| Login| bla blabla |
+|User managements| Logout| bla blabla |
+| Items |**Create new group**| bla blabla |
+
+
+
+## Test record (instance of template)
+- list test cases results (name, date result)
+- UI should be something like wizard
+
+## List of template items
+
+## List of test records (dashboard)
+- grouped by test suites
+
+|	| 2016-01-15 | 2016-01-14 | 2016-01-13|
+|---|------------|------------|-----------|
+|Login | OK| OK| failed |
+|Logout | OK| OK| failed |
+|Creating new item | OK| OK| failed |
+-------------------------------
