@@ -51,3 +51,16 @@ List items:
 |Logout | OK| OK| failed |
 |Creating new item | OK| OK| failed |
 -------------------------------
+
+## Enter new test
+
+**Test Suite:** Group  
+**Test Case:** Create New Group  
+**Prerequisities:**
+* User must be logged in.  
+* User must be able to create item.
+
+**Steps:**
+* Step 1
+* Step 2
+* Step 3
