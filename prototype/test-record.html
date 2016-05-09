@@ -1,18 +1,36 @@
 <html>
-	<title>Automat</title>
+	<title>Automat - Superadmin 2.2.2</title>
 	<link href="style/style.css" rel="stylesheet" type="text/css" />
 	<body>
-		<h1>Automat - test detail</h1>
 
-		<label>Test suite name</label>
-		<input type="text">
+		<header>
+			<h1>Superadmin 2.2.2</h1>
+			<h2>Test suite (1/5): Backend</h2>
+			<h3>Test (1/10): Create new backend</h3>
+		</header>
 
-		<label>Test case name</label>
-		<input type="text">
+		<h4>Prerequisities</h4>
+		<ol>
+			<li>Running superadmin</li>
+			<li>User must be logged in</li>
+			<li>User must be abble to create new item</li>
+		</ol>
 
-		<label>State</label>
-		Active
+		<h4>Steps</h4>
+		<ol>
+			<li>Click on New</li>
+			<li>Click on Backend</li>
+			<li>Fill in "name" into the field Name</li>
+			<li>Fill in "version" into the field Version</li>
+			<li>Fill in "backend" into the field Backend</li>
+			<li>Fill in "URL" into the field Service URL</li>
+			<li>Fill in "URL" into the field Documentation location</li>
+			<li>Click on Save</li>
+			<li>Verify button Save is not active</li>
+		</ol>
 
-
+		<button>OK</button>
+		<button>Test failed</button>
+		<button>Unable to test</button>
 	</body>
 </html>
