@@ -1,11 +1,17 @@
-<h2 id="title">Automat</h2>
-
 <nav>
-  {{#link-to "test"}}Test pool{{/link-to}}
-  {{#link-to "test.run"}}Run test{{/link-to}}
-  {{#link-to "test.dashboard"}}Dashboard{{/link-to}}
-  {{#link-to "test.create"}}Create test{{/link-to}}
-  {{#link-to "user"}}User{{/link-to}}
+	<section>
+		<b>Automat</b>
+		{{#link-to "test"}}Test pool{{/link-to}}
+		{{#link-to "test.run"}}Run test{{/link-to}}
+		{{#link-to "test.dashboard"}}Dashboard{{/link-to}}
+		{{#link-to "test.create"}}Create test{{/link-to}}
+	</section>
+	<section>
+		{{#link-to "user"}}User{{/link-to}}
+	</section>
 </nav>
 
+<main>
+
 {{outlet}}
+</main>

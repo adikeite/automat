@@ -1,3 +1,39 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&subset=latin,latin-ext);
+@import "variables";
+
 body {
-  font-family: sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: lighten($colorBase, 75%);
+}
+
+nav {
+	padding: 1em;
+	background-color: $colorBase;
+	color: lighten($colorBase, 10%);
+	display: flex;
+	justify-content: space-between;
+	a {
+		color: lighten($colorBase, 10%);
+		text-decoration: none;
+		margin: 0 1em;
+		transition: all $time;
+		padding: 1em 0 ;
+		&:hover {
+			color: lighten($colorBase, 80%);
+		}
+	}
+}
+main {
+	padding: 1em;
+}
+
+h1, h2, h3 {
+	padding: 0;
+	margin: 0;
+	color:$colorBase;
+}
+h1 {
+	text-transform: uppercase;
 }
