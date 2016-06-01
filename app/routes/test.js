@@ -4,13 +4,13 @@ export default Ember.Route.extend({
   beforeModel() {
     this.store.createRecord('test', {
       id: 1,
-      testSuiteName: 'suite name1',
-      testCaseName: 'test case name'
+      suiteName: 'suite name1',
+      name: 'test case 1'
     });
     this.store.createRecord('test', {
       id: 2,
-      testSuiteName: 'suite name2',
-      testCaseName: 'test case name'
+      suiteName: 'suite name2',
+      name: 'test case 2'
     });
   },
   model() {

@@ -1,9 +1,17 @@
 <h1>Test Pool</h1>
 
-
+<table>
+  <tr>
+    <th>Suite</th>
+    <th>Name</th>
+  </tr>
 {{#each model as |test|}}
-  <div>{{test.testSuiteName}}</div>
+  <tr>
+    <td>{{test.suiteName}}</td>
+    <td>{{test.name}}</td>
+  </tr>
 {{/each}}
+</table>
 
 
 {{outlet}}
