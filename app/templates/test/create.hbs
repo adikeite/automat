@@ -1,9 +1,30 @@
-{{outlet}}
-
 <h2>Create Test</h2>
 
+<label>
+  <div>
+    Name
+  </div>
 {{input value=model.name}}
+</label>
+<label>
+  <div>
+    Suite Name
+  </div>
 {{input value=model.suiteName}}
-
-{{model.name}}
-{{model.suiteName}}
+</label>
+<label>
+  <div>
+    Prerequisities
+  </div>
+{{#textarea }}{{model.prerequisities}}{{/textarea}}
+</label>
+<label>
+  <div>
+    Steps
+  </div>
+{{#textarea }}{{model.steps}}{{/textarea}}
+</label>
+<div>
+<button type="button" {{action "cancel"}}>Cancel</button>
+<button type="button" {{action "save"}}>Save</button>
+</div>
