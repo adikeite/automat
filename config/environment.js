@@ -3,6 +3,16 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'automat',
+    firebase: {
+      apiKey: "AIzaSyDYOMyC4izA-4hYMoO1lV5isgt7btBoE78",
+      authDomain: "automat-e0927.firebaseapp.com",
+      databaseURL: "https://automat-e0927.firebaseio.com",
+      storageBucket: "automat-e0927.appspot.com",
+    },
+
+    contentSecurityPolicy: {
+      'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com"
+    },
     environment: environment,
     baseURL: '/',
     locationType: 'auto',

@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return this.store.createRecord('test')
+    return this.store.createRecord('test');
   },
 
   actions: {
@@ -13,6 +13,7 @@ export default Ember.Route.extend({
     },
     save() {
       console.log('save');
+      this.modelFor('test/create').save();
       this.transitionTo('test');
     }
   }
