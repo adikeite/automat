@@ -16,13 +16,14 @@
   <div>
     Prerequisities
   </div>
-{{#textarea }}{{model.prerequisities}}{{/textarea}}
+{{textarea value=model.prerequisities}}
 </label>
 <label>
   <div>
     Steps
   </div>
-{{#textarea }}{{model.steps}}{{/textarea}}
+{{textarea value=model.steps}}
+{{markdown-to-html markdown=model.steps}}
 </label>
 <div>
 <button type="button" {{action "cancel"}}>Cancel</button>

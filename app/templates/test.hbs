@@ -5,12 +5,16 @@
     <th>Suite</th>
     <th>Name</th>
   </tr>
-{{#each model as |test|}}
-  <tr>
-    <td>{{test.suiteName}}</td>
-    <td>{{test.name}}</td>
-  </tr>
-{{/each}}
+  <tbody>
+	{{#each model as |test|}}
+		{{#unless test.isNew}}
+			<tr>
+		    	<td>{{test.suiteName}}</td>
+		    	<td>{{test.name}}</td>
+		  	</tr>
+	  	{{/unless}}
+	{{/each}}
+	</tbody>
 </table>
 
 
