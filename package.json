@@ -44,6 +44,7 @@
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.5.1",
     "ember-moment": "7.0.0-beta.3",
+    "ember-power-select": "1.0.0-alpha.5",
     "ember-resolver": "^2.0.3",
     "emberfire": "2.0.0",
     "loader.js": "^4.0.1",

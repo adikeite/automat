@@ -7,6 +7,9 @@ export default Model.extend({
 	name,
 
 	@attr('string')
+	project,
+
+	@attr('string')
 	suiteName,
 
 	@attr('string', {defaultValue: ''})

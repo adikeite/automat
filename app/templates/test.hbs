@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Project</th>
     <th>Suite</th>
     <th>Name</th>
     <th>Created</th>
@@ -11,6 +12,7 @@
 	{{#each model as |test|}}
 		{{#unless test.isNew}}
 			<tr {{action 'select' test}}>
+		    	<td>{{test.project}}</td>
 		    	<td>{{test.suiteName}}</td>
 		    	<td>{{test.name}}</td>
 				<td>{{moment-from-now test.createdDate}}</td>
