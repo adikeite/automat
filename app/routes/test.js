@@ -3,12 +3,16 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 
 	model() {
-		return this.store.findAll('test');
+		return {
+			tests: this.store.findAll('test'),
+			showDetails: false
+		};
 	},
 
 	actions: {
-		select() {
-			console.debug('select', ...arguments);
+		select(item) {
+			console.log(item);
+			this.transitionTo('test.edit', item.id);
 		},
 		delete(record) {
 			record.destroyRecord();

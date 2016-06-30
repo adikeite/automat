@@ -1,0 +1,34 @@
+<div class="route edit">
+	<h2>Edit Test</h2>
+	<section>
+		<aside>
+			<label>
+				<div>Name</div>
+				{{input value=model.name}}
+			</label>
+			<label>
+				<div>Project</div>
+				{{input value=model.project}}
+			</label>
+			<label>
+			  <div>Suite Name</div>
+				{{input value=model.suiteName}}
+			</label>
+			<label>
+				<div>Prerequisities</div>
+				{{textarea value=model.prerequisities}}
+			</label>
+		</aside>
+		<aside>
+			<label>
+				  <div>Steps</div>
+				{{textarea value=model.steps}}
+				{{markdown-to-html markdown=model.steps}}
+			</label>
+		</aside>
+	</section>
+	<footer>
+		<button type="button" {{action "save"}}>Save</button>
+		<button type="button" {{action "cancel"}}>Cancel</button>
+	</footer>
+</div>

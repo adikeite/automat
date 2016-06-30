@@ -10,6 +10,7 @@ Router.map(function() {
 		this.route('create');
 		this.route('run');
 		this.route('dashboard');
+		this.route('edit', {path: 'edit/:test_id'});
 	});
 	this.route('user');
 });
