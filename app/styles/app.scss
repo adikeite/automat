@@ -1,11 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&subset=latin,latin-ext);
 @import "variables";
+    @import "ember-power-select";
 
 body {
-  font-family: 'Open Sans Condensed', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: lighten($colorBase, 75%);
+	font-family: "Open Sans Condensed", sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: lighten($colorBase, 75%);
 }
 
 nav {
@@ -19,25 +20,137 @@ nav {
 		text-decoration: none;
 		margin: 0 1em;
 		transition: all $time;
-		padding: 1em 0 ;
+		padding: 1em 0 ;s
 		&:hover {
 			color: lighten($colorBase, 80%);
 		}
 	}
 }
 main {
-	padding: 1em;
+	display: flex;
+	flex-wrap: wrap;
+	section:first-of-type {
+		flex:1;
+	}
+	section {
+		padding: 1em;
+	}
 }
 
-h1, h2, h3 {
+button {
+	font-family: "Open Sans Condensed", sans-serif;
+	color: white;
+	background-color: $colorBase;
+	font-size: 1.5em;
+	padding: 0 1em;
+	border-radius: 0.25em;
+	border: 1px solid $colorBase;
+	outline: 0;
+	cursor: pointer;
+	transition: all $time;
+	color: rgba(white, 0.5);
+	&:hover:not(:disabled) {
+		background-color: lighten($colorBase, 20%);
+		text-shadow: 0 -1px 0 rgba(black, 0.3);
+			color: white;
+	}
+	& + button {
+		margin-left: 0.5em;
+	}
+}
+input,textarea {
+	padding: 0.5em;font-size: 1.5em;
+	font-family: "Open Sans Condensed", sans-serif;
+}
+
+h1,
+h2,
+h3 {
 	padding: 0;
 	margin: 0;
-	color:$colorBase;
+	color: $colorBase;
 }
 h1 {
 	text-transform: uppercase;
 }
 
-table td {
-  border: 1px solid black;
+table {
+	border-collapse: collapse;
+	width: 100%;
+	th {
+		color: $colorBase;
+
+	}
+
+	tbody {
+		border-top:  1px solid $colorBase;
+		border-bottom:  1px solid $colorBase;
+		&:nth-child(even) {
+			background-color: lighten($colorBase, 80%);
+		}
+		&:hover {
+			cursor: pointer;
+			tr:first-of-type {
+				color: white;
+				background-color: $colorBase;
+			}
+			.mdi {
+				color: rgba(white, 0.5);
+				transition: color $time;
+				&.mdi-delete {
+					&:hover {
+						color: white;
+					}
+				}
+			}
+		}
+		td {
+			padding: 0.5em;
+			&:last-child {
+				//text-align: right;
+			}
+		}
+		tr:last-of-type {
+			td {
+				vertical-align: top;
+			}
+		}
+	}
+}
+.mdi {
+	color: $colorBase;
+}
+
+.route {
+	display: flex;
+	flex-direction: column;
+	label {
+		flex-direction: column;
+		display: flex;
+		input,textarea {
+			flex: 1;
+		}
+	}
+	section {
+		align-items: stretch;
+		justify-content: flex-start;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		aside+aside {
+			margin-left: 1em;
+		}
+		aside {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+	footer {
+		border-top: 1px solid $colorBase;
+		padding-top: 1em;
+		margin-top: 1em;
+		display: flex;
+		justify-content: flex-end;
+	}
 }

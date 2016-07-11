@@ -1,49 +1,62 @@
 /* jshint node: true */
 
 module.exports = function(environment) {
-  var ENV = {
-    modulePrefix: 'automat',
-    environment: environment,
-    baseURL: '/',
-    locationType: 'auto',
-    EmberENV: {
-      FEATURES: {
-        // Here you can enable experimental features on an ember canary build
-        // e.g. 'with-controller': true
-      }
-    },
+	var ENV = {
+		modulePrefix: 'automat',
+		firebase: {
+			apiKey: 'AIzaSyDYOMyC4izA-4hYMoO1lV5isgt7btBoE78',
+			authDomain: 'automat-e0927.firebaseapp.com',
+			databaseURL: 'https://automat-e0927.firebaseio.com',
+			storageBucket: 'automat-e0927.appspot.com'
+		},
 
-    APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
-    }
-  };
+		contentSecurityPolicy: {
+			'connect-src': '\'self\' https://auth.firebase.com wss://*.firebaseio.com'
+		},
+		environment: environment,
+		baseURL: '/',
+		locationType: 'auto',
+		EmberENV: {
+			FEATURES: {
+				// Here you can enable experimental features on an ember canary build
+				// e.g. 'with-controller': true
+			}
+		},
+		moment: {
+			allowEmpty: true // default: false
+		},
 
-  if (environment === 'development') {
-    // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
-  }
+		APP: {
+			// Here you can pass flags/options to your application instance
+			// when it is created
+		}
+	};
 
-  if (environment === 'test') {
-    // Testem prefers this...
-    ENV.baseURL = '/';
-    ENV.locationType = 'none';
+	if (environment === 'development') {
+		// ENV.APP.LOG_RESOLVER = true;
+		// ENV.APP.LOG_ACTIVE_GENERATION = true;
+		// ENV.APP.LOG_TRANSITIONS = true;
+		// ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
+		// ENV.APP.LOG_VIEW_LOOKUPS = true;
+	}
 
-    // keep test console output quieter
-    ENV.APP.LOG_ACTIVE_GENERATION = false;
-    ENV.APP.LOG_VIEW_LOOKUPS = false;
+	if (environment === 'test') {
+		// Testem prefers this...
+		ENV.baseURL = '/';
+		ENV.locationType = 'none';
 
-    ENV.APP.rootElement = '#ember-testing';
-  }
+		// keep test console output quieter
+		ENV.APP.LOG_ACTIVE_GENERATION = false;
+		ENV.APP.LOG_VIEW_LOOKUPS = false;
 
-  if (environment === 'production') {
-    ENV.locationType = 'hash';
-    ENV.baseURL = '/automat/';
+		ENV.APP.rootElement = '#ember-testing';
+	}
 
-  }
+	if (environment === 'production') {
+		ENV.locationType = 'hash';
+		ENV.baseURL = '/automat/';
 
-  return ENV;
+	}
+
+	return ENV;
 };
