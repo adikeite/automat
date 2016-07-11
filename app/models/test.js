@@ -1,10 +1,23 @@
 import Model from 'ember-data/model';
-import attr from 'ember-data/attr';
+import { attr } from 'ember-computed-decorators/ember-data';
 
 export default Model.extend({
-  name: attr('string'),
-  suiteName: attr('string'),
-  prerequisities: attr('string'),
-  steps: attr('string')
 
+	@attr('string')
+	name,
+
+	@attr('string')
+	project,
+
+	@attr('string')
+	suiteName,
+
+	@attr('string', {defaultValue: ''})
+	prerequisities,
+
+	@attr('string', {defaultValue: ''})
+	steps,
+
+	@attr('date')
+	createdDate
 });
