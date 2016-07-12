@@ -1,0 +1,40 @@
+# Superadmin
+## Backend
+### Create Backend
+
+#### Prerequisities
+* User must be logged in.
+* User must be able to create new item.
+* Name has to be unique.
+* Version has to be in format "v1".
+* Backend must not contain spaces, e.g. "testBackend".
+* URL has to contain "http://".
+
+#### Steps
+1. Click on New
+1. Click on Backend
+1. Fill in "name" into the field Name
+1. Fill in "version" into the field Version
+1. Fill in "backend" into the field Backend
+1. Fill in "URL" into the field Service URL
+1. Fill in "URL" into the field Documentation location
+1. Click on Save
+1. Verify button Save is not active
+
+---
+# Superadmin
+## Backend
+### Search for Backend
+#### Prerequisities
+* User must be logged in.
+* At least 1 backend has to exist.
+* Backend has to be enabled.
+
+#### Steps
+1. Click on button Backend
+1. Verify the list of all backends is visible
+1. Verify "type:backend" value is in the search field
+1. Click on one of the backends
+1. Verify detailed view of the backend is opened
+1. Verify the fields are not empty
+1. Verify there are 7 buttons visible: Groups, Configs, Headers, Endpoints, Export, Save, Remove

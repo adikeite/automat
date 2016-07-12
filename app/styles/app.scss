@@ -7,6 +7,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: lighten($colorBase, 75%);
+	font-size: 125%;
 }
 
 nav {
@@ -16,13 +17,14 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	a {
-		color: lighten($colorBase, 10%);
+		color: lighten($colorBase, 30%);
 		text-decoration: none;
-		margin: 0 1em;
 		transition: all $time;
-		padding: 1em 0 ;s
+		padding: 1em 1em;
+		&.active,
 		&:hover {
 			color: lighten($colorBase, 80%);
+			background-color: darken($colorBase, 10%);
 		}
 	}
 }
