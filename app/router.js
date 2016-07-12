@@ -14,6 +14,7 @@ Router.map(function() {
   this.route('user');
   this.route('import');
   this.route('dashboard');
+  this.route('loading');
 });
 
 export default Router;
