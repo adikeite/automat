@@ -31,8 +31,8 @@ nav {
 main {
 	display: flex;
 	flex-wrap: wrap;
-	section:first-of-type {
-		flex:1;
+	section {
+		flex: 1;
 	}
 	section {
 		padding: 1em;
@@ -132,6 +132,7 @@ table {
 		input,textarea {
 			flex: 1;
 		}
+		margin-bottom: 1em;
 	}
 	section {
 		align-items: stretch;
@@ -139,13 +140,14 @@ table {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		aside+aside {
-			margin-left: 1em;
-		}
 		aside {
+			margin-right: 1em;
 			flex: 1;
 			display: flex;
 			flex-direction: column;
+		}
+		aside+aside {
+			margin-right: 0em;
 		}
 	}
 	footer {
@@ -155,4 +157,27 @@ table {
 		display: flex;
 		justify-content: flex-end;
 	}
+}
+
+.loading {
+	overflow: hidden;
+	position: relative;height: 10px;
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		height: 3px;
+		width: 50%;
+		background-color:  lighten($colorBase, 5%);
+		animation-name: loading;
+  		animation-duration: 3s;
+		animation-iteration-count: infinite;
+		box-shadow: 0 0 5px lighten($colorBase, 20%);
+		z-index: 1000;
+	}
+}
+
+@keyframes loading {
+    0%   {left: -100%;}
+    100% {left: 100%}
 }

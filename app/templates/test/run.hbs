@@ -1,11 +1,31 @@
-{{outlet}}
+<section>
+	<h2>Run test</h2>
+	<section>
+		<h3>Project</h3>
+		<select onchange={{action (route-action 'selectProject') value="target.value"}}>
+			{{#each model.projects as |project|}}
+				<option>{{project}}</option>
+			{{/each}}
+		</select>
+	</section>
+	<br>
+	<section>
+		<h3>Suite</h3>
+		<select  multiple="multiple" onchange={{action (route-action 'selectSuite') value="target"}}>
+			{{#each model.suites as |suite|}}
+				<option>{{suite}}</option>
+			{{/each}}
+		</select>
+	</section>
+	<section>
+		<h3>Test</h3>
+		<select  multiple="multiple" onchange={{action (route-action 'selectTest') value="target"}}>
+			{{#each model.tests as |test|}}
+				<option>{{test}}</option>
+			{{/each}}
+		</select>
+	</section>
 
-<h2>Run test</h2>
-Project
-{{#power-select options=model.projects onchange=(action "projectSelect") as |name|}}
-	{{name}}
-{{/power-select}}
-Suite
-{{#power-select options=model.suites onchange=(action "projectSelect") as |name|}}
-	{{name}}
-{{/power-select}}
+	<button {{action 'run'}}>Run</button>
+
+</section>

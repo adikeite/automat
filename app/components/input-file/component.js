@@ -2,28 +2,37 @@ import Ember from 'ember';
 
 export default Ember.TextField.extend({
 
-	attributeBindings: ['type', 'accept'],
+	attributeBindings: ['type', 'accept', 'multiple'],
 
 	type: 'file',
 
 	accept: '*.txt',
 
+	multiple: 'multiple',
+
 	change() {
-		this.send('upload', this.$().get(0).files[0]);
+		this.send('upload', this.$().get(0).files);
 	},
 
 	actions: {
-		upload(file) {
-			if (FileReader) {
-				var reader = new FileReader();
-
-				reader.onload = (e) => {
-					this.sendAction('onUpload', e.currentTarget.result);
-				};
-				reader.readAsText(file);
-			} else {
+		upload(files) {
+			if (!FileReader) {
 				Ember.Logger.error('The File APIs are not supported by your browser.');
 			}
+			let promises = [];
+
+			for (let i = 0; i < files.length; i++) {
+				promises[i] = new Promise((success) => {
+					let reader = new FileReader();
+					reader.onload = (e) => {
+						success(e.currentTarget.result);
+					};
+					reader.readAsText(files[i]);
+				});
+			}
+			Ember.RSVP.all(promises).then(data => {
+				this.sendAction('onUpload', data.join('\n'));
+			});
 		}
 	}
 });
