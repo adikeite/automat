@@ -6,7 +6,7 @@ export default Ember.TextField.extend({
 
 	type: 'file',
 
-	accept: '*.txt',
+	accept: '*.txt|*.md',
 
 	multiple: 'multiple',
 
