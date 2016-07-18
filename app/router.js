@@ -10,11 +10,13 @@ Router.map(function() {
     this.route('create');
     this.route('run');
     this.route('edit', {path: 'edit/:test_id'});
+    this.route('import');
   });
   this.route('user');
-  this.route('import');
   this.route('dashboard');
   this.route('loading');
+
+  this.route('tests', function() {});
 });
 
 export default Router;

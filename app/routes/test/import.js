@@ -30,7 +30,7 @@ export default Ember.Route.extend({
 					createdDate: new Date()
 				};
 			}));
-			let model = this.modelFor('import');
+			let model = this.modelFor('test/import');
 
 			records.forEach(record => {
 				let imported = this.store.createRecord('test', record).save();
