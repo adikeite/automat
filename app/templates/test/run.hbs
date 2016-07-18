@@ -1,7 +1,7 @@
 <section>
-	<h2>Run test</h2>
+
 	<section>
-		<h3>Project</h3>
+		<h3><i class="mdi mdi-stars"></i> Project</h3>
 		<select onchange={{action 'selectProject' value="target.value"}}>
 			{{#each model.projects as |project|}}
 				<option value={{project}} selected={{if (eq project model.selectedProject) 'selected' }}>{{project}}</option>
@@ -10,7 +10,7 @@
 	</section>
 	<br>
 	<section>
-		<h3>Suite</h3>
+		<h3><i class="mdi mdi-folder"></i> Suite</h3>
 		<select multiple="multiple" onchange={{action 'selectSuite' value="target"}}>
 			{{#each model.suites as |suite|}}
 				<option value={{suite}} selected={{if (contains suite model.selectedSuites) 'selected'}}>{{suite}}</option>
@@ -18,7 +18,7 @@
 		</select>
 	</section>
 	<section>
-		<h3>Test</h3>
+		<h3><i class="mdi mdi-bug-report"></i>Test</h3>
 		<select multiple="multiple" onchange={{action 'selectTest' value="target"}}>
 			{{#each model.tests as |test|}}
 				<option value={{test}} selected={{if (contains test model.selectedTests) 'selected'}}>{{test}}</option>

@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext');
+@import url('node_moddules/mdi/css/materialdesignicons.min.css');
+
 
 @import "variables";
 $font: "Lato", sans-serif;
@@ -121,9 +123,9 @@ table {
 		}
 	}
 }
-.mdi {
+/*.mdi {
 	color: $colorBase;
-}
+}*/
 
 .route {
 	display: flex;
