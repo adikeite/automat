@@ -7,14 +7,12 @@ export default Ember.Route.extend({
 
 	actions: {
 		cancel() {
-			console.log('cancel');
-			this.modelFor('test/create').deleteRecord();
+			this.modelFor('create').deleteRecord();
 			this.transitionTo('test');
 		},
 		save() {
-			console.log('save');
-			Ember.set(this.modelFor('test/create'), 'createdDate', new Date());
-			this.modelFor('test/create').save();
+			Ember.set(this.modelFor('create'), 'createdDate', new Date());
+			this.modelFor('create').save();
 			this.transitionTo('test');
 		}
 	}
