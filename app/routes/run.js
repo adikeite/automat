@@ -2,6 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 
+	title: 'Run tests',
+
 	queryParams: {
 		selectedProject: {
 			as: 'project',
@@ -40,6 +42,8 @@ export default Ember.Route.extend({
 	},
 
 	actions: {
-		run() {}
+		run() {
+			this.transitionTo({queryParams: {test: 'asc'}});
+		}
 	}
 });

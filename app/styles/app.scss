@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext');
-@import url('node_moddules/mdi/css/materialdesignicons.min.css');
+//@import url('node_moddules/mdi/css/materialdesignicons.min.css');
 
 
 @import "variables";
@@ -19,6 +19,7 @@ nav {
 	color: lighten($colorBase, 10%);
 	display: flex;
 	justify-content: space-between;
+	border-bottom: 5px solid lighten($colorBase, 10%);
 	a {
 		color: lighten($colorBase, 30%);
 		text-decoration: none;
@@ -26,8 +27,13 @@ nav {
 		padding: 1em 1em;
 		&.active,
 		&:hover {
+			border-bottom: 5px solid $colorBase;
 			color: lighten($colorBase, 80%);
 			background-color: darken($colorBase, 10%);
+		}
+		.mdi {
+			position: relative;
+			top: 3px;
 		}
 	}
 }
@@ -48,7 +54,7 @@ button {
 	background-color: $colorBase;
 	font-size: 1.5em;
 	padding: 0 1em;
-	border-radius: 0.25em;
+	border-radius: 0.55em;
 	border: 1px solid $colorBase;
 	outline: 0;
 	cursor: pointer;
