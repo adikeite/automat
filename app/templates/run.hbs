@@ -1,19 +1,18 @@
-<main>
-	<section>
+<main class="route run">
+	<article>
 		<section>
 			<h3><i class="mdi mdi-stars"></i> Project</h3>
 			<select onchange={{action 'selectProject' value="target.value"}}>
 				{{#each model.projects as |project|}}
-					<option value={{project}} selected={{if (eq project model.selectedProject) 'selected' }}>{{project}}</option>
+				<option value={{project}} selected={{if (eq project model.selectedProject) 'selected' }}>{{project}}</option>
 				{{/each}}
 			</select>
 		</section>
-		<br>
 		<section>
 			<h3><i class="mdi mdi-folder"></i> Suite</h3>
 			<select multiple="multiple" onchange={{action 'selectSuite' value="target"}}>
 				{{#each model.suites as |suite|}}
-					<option value={{suite}} selected={{if (contains suite model.selectedSuites) 'selected'}}>{{suite}}</option>
+				<option value={{suite}} selected={{if (contains suite model.selectedSuites) 'selected'}}>{{suite}}</option>
 				{{/each}}
 			</select>
 		</section>
@@ -21,19 +20,33 @@
 			<h3><i class="mdi mdi-bug-report"></i>Test</h3>
 			<select multiple="multiple" onchange={{action 'selectTest' value="target"}}>
 				{{#each model.tests as |test|}}
-					<option value={{test}} selected={{if (contains test model.selectedTests) 'selected'}}>{{test}}</option>
+				<option value={{test.id}} selected={{if (contains test model.selectedTests) 'selected'}}>{{test.name}}</option>
 				{{/each}}
 			</select>
 		</section>
-		<button {{action 'run'}}>Run</button>
-	</section>
-	<section>
-		<h4>Project</h4>
-		{{model.selectedProject}}
-		<h4>Suites ({{model.selectedSuites.length}})</h4>
-		{{model.selectedSuites}}
-		<h4>Tests  ({{model.selectedTests.length}})</h4>
-		{{model.selectedTests}}
-		<br>
-	</section>
+	</article>
+
+	<article>
+		<section>
+			<h4>Project</h4>
+			{{model.selectedProject}}
+		</section>
+		<section>
+			<h4>Suites ({{model.selectedSuites.length}})</h4>
+			{{model.selectedSuites}}
+		</section>
+		<section>
+			<h4>Tests  ({{model.selectedTests.length}})</h4>
+			{{#each model.selectedTests as |test|}}
+				{{test.name}}
+			{{/each}}
+		</section>
+	</article>
+
+	<article>
+		<section>
+			<br>
+			<button {{action 'run'}}>Run</button>
+		</section>
+	</article>
 </main>

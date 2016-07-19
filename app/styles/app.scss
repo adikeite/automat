@@ -129,9 +129,6 @@ table {
 		}
 	}
 }
-/*.mdi {
-	color: $colorBase;
-}*/
 
 .route {
 	display: flex;
@@ -145,7 +142,7 @@ table {
 		}
 		margin-bottom: 1em;
 	}
-	section {
+	&>section {
 		align-items: stretch;
 		justify-content: flex-start;
 		display: flex;
@@ -167,6 +164,17 @@ table {
 		margin-top: 1em;
 		display: flex;
 		justify-content: flex-end;
+	}
+	&.run {
+		display: flex;
+		flex-direction: column;
+		article {
+			display: flex;
+			flex-direction:
+			section {
+				display: block;
+			}
+		}
 	}
 }
 
@@ -204,6 +212,9 @@ select {
 	option {
 		padding: 0 0.5em;
 		cursor: pointer;
+	}
+	&[multiple] {
+		min-height: 10em;
 	}
 }
 

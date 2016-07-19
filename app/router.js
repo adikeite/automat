@@ -15,6 +15,7 @@ Router.map(function() {
   this.route('user');
   this.route('loading');
   this.route('tests', function() {});
+  this.route('runner');
 });
 
 export default Router;

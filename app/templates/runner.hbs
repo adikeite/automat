@@ -1,0 +1,18 @@
+<main>
+<section>
+	<h2>{{model.test.name}} ({{model.step}} from {{model.tests.length}})</h2>
+	<h3>{{model.test.suiteName}}</h3>
+	<h3>{{model.test.project}}</h3>
+
+	<h3>Prerequisities</h3>
+	{{markdown-to-html markdown=model.test.prerequisities}}
+	 <h3>Steps</h3>
+	{{markdown-to-html markdown=model.test.steps}}
+
+	<button {{action 'ok' model.test}}>OK</button>
+	<button  {{action 'fail' model.test}}>Test failed</button>
+	<button {{action 'unable' model.test}}>Unable to test</button>
+</section>
+
+
+</main>

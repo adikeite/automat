@@ -1,2 +1,19 @@
-
-comming soon...
+<main>
+	<section>
+		<table>
+		{{#each model as |test|}}
+			<tr>
+				<td>
+					<b>{{test.name}}</b>
+				</td>
+				<td>
+					<b>{{test.runs.lastObject.result}}</b>
+				</td>
+				<td>
+					<b>{{moment-from-now test.runs.lastObject.date}}</b>
+				</td>
+			</tr>
+		{{/each}}
+		</table>
+	</section>
+</main>

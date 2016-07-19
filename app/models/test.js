@@ -1,5 +1,5 @@
 import Model from 'ember-data/model';
-import { attr } from 'ember-computed-decorators/ember-data';
+import { attr, hasMany } from 'ember-computed-decorators/ember-data';
 
 export default Model.extend({
 
@@ -19,5 +19,8 @@ export default Model.extend({
 	steps,
 
 	@attr('date')
-	createdDate
+	createdDate,
+
+	@hasMany('test-run')
+	runs
 });

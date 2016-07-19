@@ -2,18 +2,20 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 
+	runner: Ember.inject.service(),
+
 	title: 'Run tests',
 
 	queryParams: {
-		selectedProject: {
+		project: {
 			as: 'project',
 			refreshModel: true
 		},
-		selectedSuites: {
+		suites: {
 			as: 'suites',
 			refreshModel: true
 		},
-		selectedTests: {
+		tests: {
 			as: 'tests',
 			refreshModel: true
 		}
@@ -23,16 +25,22 @@ export default Ember.Route.extend({
 		let suites = (params.suites || '').split(',');
 
 		return new Promise((resolve, reject) => {
+
 			this.store.findAll('test').then(allTests => {
-				let selectedProject = params.selectedProject || allTests.map(test => test.get('project')).uniq().compact().objectAt(0),
+				let selectedProject = params.project || allTests.map(test => test.get('project')).uniq().compact().objectAt(0),
 					suites = allTests.filter(item => item.get('project') === selectedProject).map(test => test.get('suiteName')).uniq().compact(),
-					selectedSuites = params.selectedSuites ? params.selectedSuites.split(',') : suites,
-					tests = allTests.filter(item => (item.get('project') === selectedProject && selectedSuites.includes(item.get('suiteName')))).map(test => test.get('name')).uniq().compact();
+					selectedSuites = params.suites ? params.suites.split(',') : suites,
+					tests = allTests.filter(item => (item.get('project') === selectedProject && selectedSuites.includes(item.get('suiteName')))),
+					selectedTests = params.tests ? params.tests.split(',') : [];
+
+				selectedTests = selectedTests.length > 0 ? selectedTests.map(id => {
+					return this.store.peekRecord('test', id);
+				}) : tests;
 
 				resolve({
 					selectedProject: selectedProject,
 					selectedSuites: selectedSuites,
-					selectedTests: params.selectedTests ? params.selectedTests.split(',') : tests,
+					selectedTests: selectedTests,
 					projects: allTests.map(test => test.get('project')).uniq().compact(),
 					suites: suites,
 					tests: tests
@@ -43,7 +51,8 @@ export default Ember.Route.extend({
 
 	actions: {
 		run() {
-			this.transitionTo({queryParams: {test: 'asc'}});
+			this.get('runner').set('tests', this.modelFor('run').tests);
+			this.transitionTo('runner');
 		}
 	}
 });

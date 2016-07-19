@@ -3,29 +3,28 @@ import computed, { oneWay, observes, alias } from 'ember-computed-decorators';
 
 export default Ember.Controller.extend({
 
-	queryParams: ['selectedProject', 'selectedSuites', 'selectedTests'],
+	queryParams: ['project', 'suites', 'tests'],
 
-	selectedProject: null,
-	selectedSuites: null,
-	selectedTests: null,
+	project: null,
+	suites: null,
+	tests: null,
 
 	actions: {
 		selectProject(project) {
-			this.set('selectedProject', project);
-			this.set('selectedSuites', null);
-			this.set('selectedTests', null);
+			this.set('project', project);
+			this.set('suites', null);
+			this.set('tests', null);
 		},
 
 		selectSuite(el) {
-			this.set('selectedSuites', jQuery.makeArray($(':selected', el)).map((item) => {
+			this.set('suites', jQuery.makeArray($(':selected', el)).map((item) => {
 				return item.value;
 			}));
-			this.set('selectedTests', null);
-
+			this.set('tests', null);
 		},
 
 		selectTest(el) {
-			this.set('selectedTests', jQuery.makeArray($(':selected', el)).map((item) => {
+			this.set('tests', jQuery.makeArray($(':selected', el)).map((item) => {
 				return item.value;
 			}));
 		}
