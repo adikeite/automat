@@ -5,6 +5,18 @@
 @import "variables";
 $font: "Lato", sans-serif;
 
+#logo {
+	background-image: url(automat.svg);
+    display: inline-block;
+    background-size: contain;
+    width: 248px;
+    position: absolute;
+    height: 51px;
+    top: 9px;
+    background-size: contain;
+    background-repeat: no-repeat;
+	margin-right: 20em;
+}
 body {
 	font-family: $font;
 	margin: 0;
@@ -20,6 +32,9 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	border-bottom: 5px solid lighten($colorBase, 10%);
+	a:first-of-type{
+		margin-left: 10em;
+	}
 	a {
 		color: lighten($colorBase, 30%);
 		text-decoration: none;
