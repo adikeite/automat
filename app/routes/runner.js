@@ -4,6 +4,12 @@ export default Ember.Route.extend({
 
 	runner: Ember.inject.service(),
 
+	queryParams: {
+		step: {
+			refreshModel: true
+		}
+	},
+
 	model(params) {
 		let step = parseInt(params.step, 10) || 1;
 
@@ -23,6 +29,7 @@ export default Ember.Route.extend({
 
 		record.save().then(() => {
 			test.get('runs').pushObject(record).save();
+			this.controllerFor('runner').set('step', this.modelFor('runner').step + 1);
 		});
 	},
 

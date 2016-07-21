@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext');
-//@import url('node_moddules/mdi/css/materialdesignicons.min.css');
+@import "node_modules/mdi/scss/materialdesignicons.scss";
 
 
 @import "variables";
@@ -180,7 +180,7 @@ table {
 		display: flex;
 		justify-content: flex-end;
 	}
-	&.run {
+	&.run, &.runner {
 		display: flex;
 		flex-direction: column;
 		article {
