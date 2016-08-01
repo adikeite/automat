@@ -1,18 +1,30 @@
+{{#unless model.test}}
 <main class="route runner">
 	<article>
 		<section>
-			<h2>{{model.test.project}} <i class="fa fa-arrow-right"></i> {{model.test.suiteName}} <i class="fa fa-arrow-right"></i> {{model.test.name}} ({{model.step}} from {{model.tests.length}})</h2>
+				<i class="fa fa-hand-spock-o" aria-hidden="true"></i> test is finished
+		</section>
+	</article>
+</main>
+{{/unless}}
+
+{{#if model.test}}
+<main class="route runner">
+	<article>
+		<section>
+			<h2>{{model.test.name}}  ({{model.step}} from {{model.tests.length}})</h2>
+			<h3>{{model.test.project}} <i class="fa fa-arrow-right"></i> {{model.test.suiteName}}</h3>
 			<nav>
-				<button {{action 'ok' model.test}}>OK</button>
-				<button  {{action 'fail' model.test}}>Test failed</button>
-				<button {{action 'unable' model.test}}>Unable to test</button>
+				<button class="ok" {{action 'ok' model.test}}><i class="fa fa-check"></i>OK</button>
+				<button class="fail" {{action 'fail' model.test}}><i class="fa fa-times"></i>Test failed</button>
+				<button class="unable" {{action 'unable' model.test}}><i class="fa fa-warning"></i>Unable to test</button>
 			</nav>
 		</section>
 </article>
 <article>
 	<section>
 		<h3>Steps</h3>
-		{{markdown-to-html markdown=model.test.steps}}
+		{{markdown-to-html markdown=model.testSteps}}
 	</section>
 	<section>
 		<h3>Prerequisities</h3>
@@ -20,3 +32,4 @@
 	</section>
 </article>
 </main>
+{{/if}}

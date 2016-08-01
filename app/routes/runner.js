@@ -11,17 +11,18 @@ export default Ember.Route.extend({
 	},
 
 	model(params) {
-		let step = parseInt(params.step, 10) || 1;
+		let step = parseInt(params.step, 10) || 1,
+			test = this.get('runner').tests[step - 1];
 
 		return {
 			tests: this.get('runner').tests,
 			step: step,
-			test: this.get('runner').tests[step - 1]
+			test: this.get('runner').tests[step - 1],
+			testSteps: test ? test.get('steps').replace(/\* /g, '1. ') : undefined
 		};
 	},
 
 	nextStep(result, test) {
-
 		let record = this.store.createRecord('test-run', {
 			result: result,
 			date: new Date()

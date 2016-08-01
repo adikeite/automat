@@ -52,7 +52,7 @@ export default Ember.Route.extend({
 	actions: {
 		run() {
 			this.get('runner').set('tests', this.modelFor('run').tests);
-			this.transitionTo('runner');
+			this.transitionTo('runner', {queryParams: {step: 1}});
 		}
 	}
 });
