@@ -40,7 +40,7 @@ nav {
 		height: 25px;
 		background-repeat: no-repeat;
 	}
-	a {
+	a:not(#logo) {
 		color: lighten($colorBase, 30%);
 		text-decoration: none;
 		transition: all $time;
@@ -50,7 +50,6 @@ nav {
 		i {
 			transition: all $time;
 		}
-
 
 		&:hover,
 		&.active {
