@@ -118,47 +118,19 @@ h3 {
 h1 {
 	text-transform: uppercase;
 }
-
 table {
 	border-collapse: collapse;
 	width: 100%;
 	th {
 		color: $colorBase;
 	}
-
-	tbody {
-		border-top: 1px solid $colorBase;
-		border-bottom: 1px solid $colorBase;
+	tr {
 		&:nth-child(even) {
 			background-color: lighten($colorBase, 80%);
 		}
-		&:hover {
-			cursor: pointer;
-			tr:first-of-type {
-				color: white;
-				background-color: $colorBase;
-			}
-			.mdi {
-				color: rgba(white, 0.5);
-				transition: color $time;
-				&.mdi-delete {
-					&:hover {
-						color: white;
-					}
-				}
-			}
-		}
-		td {
-			padding: 0.5em;
-			&:last-child {
-				//text-align: right;
-			}
-		}
-		tr:last-of-type {
-			td {
-				vertical-align: top;
-			}
-		}
+	}
+	td {
+		padding: 0.5em;
 	}
 }
 
@@ -245,6 +217,49 @@ table {
 					background-color: darken(desaturate(orange, 30%), 10%);
 					&:hover {
 						background-color: orange;
+					}
+				}
+			}
+		}
+	}
+	&.pool {
+		table {
+			tbody {
+				border-top: 1px solid $colorBase;
+				border-bottom: 1px solid $colorBase;
+				&:nth-child(even) {
+					background-color: lighten($colorBase, 80%);
+				}
+				.fa {
+					color: $colorBase;
+					transition: color $time;
+
+					&:hover {
+						color: white;
+					}
+				}
+				&:hover {
+					cursor: pointer;
+					tr:first-of-type {
+						color: white;
+						background-color: $colorBase;
+					}
+					.fa {
+						color: rgba( white, 0.8);
+						&:hover {
+							color: white;
+						}
+					}
+				}
+				td {
+					padding: 0.5em;
+					&:last-child {
+						//text-align: right;
+					}
+				}
+				tr:last-of-type {
+					td {
+						vertical-align: top;
 					}
 				}
 			}

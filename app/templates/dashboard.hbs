@@ -4,13 +4,13 @@
 		{{#each model as |test|}}
 			<tr>
 				<td>
-					<b>{{test.name}}</b>
+					{{test.name}}
 				</td>
 				<td>
-					<b>{{test.runs.lastObject.result}}</b>
+					{{test.runs.lastObject.result}}
 				</td>
 				<td>
-					<b>{{moment-from-now test.runs.lastObject.date}}</b>
+					{{moment-from-now test.runs.lastObject.date}}
 				</td>
 			</tr>
 		{{/each}}

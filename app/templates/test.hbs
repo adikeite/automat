@@ -1,4 +1,4 @@
-<main>
+<main class="route pool">
 	<section>
 		<label>
 		{{input type="checkbox" checked=model.showDetails}} Show detail
@@ -21,7 +21,7 @@
 					    	<td>{{test.suiteName}}</td>
 					    	<td>{{test.name}}</td>
 							<td>{{moment-from-now test.createdDate}}</td>
-					    	<td><span {{action 'delete' test  bubbles=false}}><i class="mdi mdi-delete"></i></span></td>
+					    	<td><span {{action 'delete' test  bubbles=false}}><i class="fa fa-trash"></i></span></td>
 					  	</tr>
 						{{#if model.showDetails}}
 							<tr>
