@@ -1,5 +1,5 @@
 ember build
-git checkout gh-pages
+git checkout "gh-pages"
 git pull
 cd dist
 cp -arv . ..
