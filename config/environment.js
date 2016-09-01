@@ -14,9 +14,14 @@ module.exports = function(environment) {
 			'connect-src': '\'self\' https://auth.firebase.com wss://*.firebaseio.com'
 		},
 		environment: environment,
-		baseURL: '/',
+		rootURL: '/',
 		locationType: 'auto',
 		EmberENV: {
+			EXTEND_PROTOTYPES: {
+				Date: false,
+				Array: true,
+				String: true
+			},
 			FEATURES: {
 				// Here you can enable experimental features on an ember canary build
 				// e.g. 'with-controller': true
@@ -42,7 +47,7 @@ module.exports = function(environment) {
 
 	if (environment === 'test') {
 		// Testem prefers this...
-		ENV.baseURL = '/';
+		ENV.rootURL = '/';
 		ENV.locationType = 'none';
 
 		// keep test console output quieter
@@ -54,7 +59,7 @@ module.exports = function(environment) {
 
 	if (environment === 'production') {
 		ENV.locationType = 'hash';
-		ENV.baseURL = '/automat/';
+		ENV.rootURL = '/automat/';
 
 	}
 
