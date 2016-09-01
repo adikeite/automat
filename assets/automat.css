@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext");
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #eefdff;
+  font-size: 125%; }
+
+label {
+  cursor: pointer; }
+
+nav {
+  background-color: #005f6e;
+  color: #008ca1;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 5px solid #008ca1; }
+  nav section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; }
+  nav #logo {
+    background-image: url(automat.svg);
+    background-size: contain;
+    background-position: 3px 3px;
+    width: 130px;
+    height: 25px;
+    background-repeat: no-repeat; }
+  nav a:not(#logo) {
+    color: #08deff;
+    text-decoration: none;
+    transition: all 0.6s;
+    padding: 0.6em 0.85em;
+    transition: all 0.6s;
+    margin-left: 0.5em; }
+    nav a:not(#logo) i {
+      transition: all 0.6s; }
+    nav a:not(#logo):hover, nav a:not(#logo).active {
+      background-color: #00333b;
+      margin-left: 0; }
+      nav a:not(#logo):hover i, nav a:not(#logo).active i {
+        margin-right: 0.5em;
+        transform: scale(1.3); }
+    nav a:not(#logo).active {
+      color: white; }
+    nav a:not(#logo) .mdi {
+      position: relative;
+      top: 3px; }
+
+main {
+  display: flex;
+  flex-wrap: wrap; }
+  main section {
+    flex: 1; }
+  main section {
+    padding: 1em; }
+
+button {
+  font-family: "Lato", sans-serif;
+  color: white;
+  background-color: #005f6e;
+  font-size: 1.5em;
+  padding: 0 1em;
+  border-radius: 0.55em;
+  border: 1px solid #005f6e;
+  outline: 0;
+  cursor: pointer;
+  transition: all 0.6s;
+  color: rgba(255, 255, 255, 0.5); }
+  button:hover:not(:disabled) {
+    background-color: #00b8d4;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+    color: white; }
+  button + button {
+    margin-left: 0.5em; }
+
+input,
+textarea {
+  padding: 0.5em;
+  font-size: 1.5em;
+  font-family: "Lato", sans-serif; }
+
+h1,
+h2,
+h3 {
+  padding: 0;
+  margin: 0;
+  color: #005f6e; }
+
+h1 {
+  text-transform: uppercase; }
+
+table {
+  border-collapse: collapse;
+  width: 100%; }
+  table th {
+    color: #005f6e; }
+  table tr:nth-child(even) {
+    background-color: white; }
+  table td {
+    padding: 0.5em; }
+
+.route {
+  display: flex;
+  flex-direction: column; }
+  .route label {
+    flex-direction: column;
+    display: flex;
+    margin-bottom: 1em; }
+    .route label input,
+    .route label textarea {
+      flex: 1; }
+  .route > section {
+    align-items: stretch;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    .route > section aside {
+      margin-right: 1em;
+      flex: 1;
+      display: flex;
+      flex-direction: column; }
+    .route > section aside + aside {
+      margin-right: 0; }
+  .route footer {
+    border-top: 1px solid #005f6e;
+    padding-top: 1em;
+    margin-top: 1em;
+    display: flex;
+    justify-content: flex-end; }
+  .route.run, .route.runner {
+    display: flex;
+    flex-direction: column; }
+    .route.run article, .route.runner article {
+      display: flex;
+      flex-direction: section;
+        flex-direction-display: block; }
+    .route.run nav, .route.runner nav {
+      border: 0; }
+  .route.runner nav {
+    margin: 0.5em 0;
+    padding: 1em 0;
+    border-radius: 1em;
+    background-color: transparent; }
+    .route.runner nav button {
+      padding: 0.25em 0.5em;
+      margin: 0;
+      flex: 1;
+      font-size: 1em;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+      border: 0; }
+      .route.runner nav button i {
+        display: block;
+        font-size: 2em; }
+      .route.runner nav button.ok {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0; }
+      .route.runner nav button.fail {
+        background-color: #821717;
+        border-radius: 0; }
+        .route.runner nav button.fail:hover {
+          background-color: red; }
+      .route.runner nav button.unable {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        background-color: #ad7b1f; }
+        .route.runner nav button.unable:hover {
+          background-color: orange; }
+  .route.pool table tbody {
+    border-top: 1px solid #005f6e;
+    border-bottom: 1px solid #005f6e; }
+    .route.pool table tbody:nth-child(even) {
+      background-color: white; }
+    .route.pool table tbody .fa {
+      color: #005f6e;
+      transition: color 0.6s; }
+      .route.pool table tbody .fa:hover {
+        color: white; }
+    .route.pool table tbody:hover {
+      cursor: pointer; }
+      .route.pool table tbody:hover tr:first-of-type {
+        color: white;
+        background-color: #005f6e; }
+      .route.pool table tbody:hover .fa {
+        color: rgba(255, 255, 255, 0.8); }
+        .route.pool table tbody:hover .fa:hover {
+          color: white; }
+    .route.pool table tbody td {
+      padding: 0.5em; }
+    .route.pool table tbody tr:last-of-type td {
+      vertical-align: top; }
+
+.loading {
+  overflow: hidden;
+  position: relative;
+  height: 10px; }
+  .loading:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 3px;
+    width: 50%;
+    background-color: #007688;
+    animation-name: loading;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    box-shadow: 0 0 5px #00b8d4;
+    z-index: 1000; }
+
+@keyframes loading {
+  0% {
+    left: -100%; }
+  100% {
+    left: 100%; } }
+
+select {
+  font-family: "Lato", sans-serif;
+  font-size: 1.2em; }
+  select option {
+    padding: 0 0.5em;
+    cursor: pointer; }
+  select[multiple] {
+    min-height: 10em; }
+
+::selection {
+  background: #005f6e;
+  /* WebKit/Blink Browsers */
+  color: white; }
+
+::-moz-selection {
+  background: #005f6e;
+  /* Gecko Browsers */
+  color: white; }
+
+/*# sourceMappingURL=automat.css.map */
