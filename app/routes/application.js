@@ -2,8 +2,8 @@ import Ember from 'ember';
 import config from '../config/environment';
 
 export default Ember.Route.extend({
-	beforeModel() {
-		this.transitionTo('dashboard');
-	}
 
+	model() {
+		return {appVersion: config.APP.version};
+	}
 });
