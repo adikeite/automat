@@ -3702,7 +3702,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("automat/app")["default"].create({"name":"automat","version":"0.0.0+fcb4cc27"});
+  require("automat/app")["default"].create({"name":"automat","version":"0.0.0+796db0b1"});
 }
 
 /* jshint ignore:end */
