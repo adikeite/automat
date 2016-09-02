@@ -11,7 +11,6 @@ export default Ember.Route.extend({
 
 	actions: {
 		select(item) {
-			console.log(item);
 			this.transitionTo('test.edit', item.id);
 		},
 		delete(record) {
