@@ -1,4 +1,4 @@
-ember build
+ember build --environment production
 git checkout "gh-pages"
 git pull
 cd dist
