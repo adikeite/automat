@@ -1,23 +1,29 @@
 <main class="route pool">
 	<section>
+
+		{{#power-select
+			selected=model.selectedProject
+			options=model.projects
+			onchange=(action  'projectSelect' project) as |project|}}
+		      {{project}}
+    	{{/power-select}}
 		<label>
 		{{input type="checkbox" checked=model.showDetails}} Show detail
 		</label>
 
+
 		<table>
 		  <tr>
-		    <th>Project</th>
 		    <th>Suite</th>
 		    <th>Name</th>
 		    <th>Created</th>
 			<th></th>
 		  </tr>
 
-			{{#each model.tests as |test|}}
+			{{#each filtered as |test|}}
 				{{#unless test.isNew}}
 					<tbody {{action 'select' test}}>
 						<tr>
-					    	<td>{{test.project}}</td>
 					    	<td>{{test.suiteName}}</td>
 					    	<td>{{test.name}}</td>
 							<td>{{moment-from-now test.createdDate}}</td>
