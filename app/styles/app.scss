@@ -127,16 +127,19 @@ table {
 	border-collapse: collapse;
 	width: 100%;
 	th {
-		color: $colorBase;
+		color: complement($colorBase);
 	}
 	tr {
 		&:nth-child(even) {
-			background-color: lighten($colorBase, 80%);
+			background-color: lighten($colorBase, 50%);
+		}
+		td {
+			padding: 0.5em;
+			border-top: 1px solid $colorBase;
+			border-bottom: 1px solid $colorBase;
 		}
 	}
-	td {
-		padding: 0.5em;
-	}
+
 }
 
 .route {
@@ -235,7 +238,7 @@ table {
 				border-top: 1px solid $colorBase;
 				border-bottom: 1px solid $colorBase;
 				&:nth-child(even) {
-					background-color: lighten($colorBase, 80%);
+					background-color: lighten($colorBase, 50%);
 				}
 				.fa {
 					color: $colorBase;
@@ -259,7 +262,7 @@ table {
 					}
 				}
 				td {
-					padding: 0.5em;
+					border-bottom: 0px solid $colorBase;
 					&:last-child {
 						//text-align: right;
 					}
